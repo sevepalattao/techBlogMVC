@@ -1,0 +1,12 @@
+<div class="card">
+    {{#each this}}
+  <div class="card-header">
+  </div>
+  <div class="card-body">
+    <blockquote class="blockquote mb-0">
+      <p>{{text}}</p>
+      <footer class="blockquote-footer">{{user.username}} on {{format_date createdAt}}</footer>
+    </blockquote>
+  </div>
+  {{/each}}
+</div>
