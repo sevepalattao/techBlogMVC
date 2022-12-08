@@ -27,14 +27,14 @@ router.get('/', withAuth, async (req, res) => {
 
         res.render('dashboard'), {
             posts,
-            logged_in: req.session.logged_in
+            logged_in: true
         }
     } catch (err) {
         res.status(500).json(err);
     }
 });
 
-router.get('/edit/:id', withAuth, (req, res) => {
+router.get('/edit/:id', withAuth, async (req, res) => {
     try {
         const postData = await Post.findOne({
             where: {
@@ -56,9 +56,24 @@ router.get('/edit/:id', withAuth, (req, res) => {
         });
 
         const post = postData.get({ plain: true });
-        
+
+        res.render('editPost', {
+            post,
+            logged_in: req.session.logged_in
+        })
     } catch (err) {
         res.status(500).json(err);
     }
-})
+});
+
+router.get('/create/', withAuth, (req, res) => {
+    try {
+        res.render('createPost', {
+            logged_in: req.session.logged_in
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 module.exports = router;
