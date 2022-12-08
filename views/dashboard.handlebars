@@ -1,0 +1,9 @@
+<div>
+<h2>Dashboard</h2>
+</div>
+<div>
+    {{#each posts as |post|}}
+    {{> post_info post}}
+    <a href="/dashboard/edit/{{post.id}}"><button>Edit Post</button></a>
+</div>
+{{/each}}

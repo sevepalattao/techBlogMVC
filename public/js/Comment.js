@@ -6,7 +6,7 @@ const commentFormHandler = async (event) => {
         window.location.toString().split('/').length - 1
     ];
 
-    if (comment_text && post_id) {
+    if (comment_text) {
         const response = await fetch('/api/comments', {
             method: 'POST',
             body: JSON.stringify({ comment_text, post_id }),
