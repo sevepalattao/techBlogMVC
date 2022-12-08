@@ -34,4 +34,31 @@ router.get('/', withAuth, async (req, res) => {
     }
 });
 
+router.get('/edit/:id', withAuth, (req, res) => {
+    try {
+        const postData = await Post.findOne({
+            where: {
+                id: req.params.id
+            },
+            include: [
+                {
+                    model: Comment,
+                    include: {
+                        model: User,
+                        attributes: ['username']
+                    }
+                },
+                {
+                    model: User,
+                    attributes: ['username']
+                },
+            ],
+        });
+
+        const post = postData.get({ plain: true });
+        
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
 module.exports = router;
