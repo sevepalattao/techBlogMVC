@@ -49,5 +49,5 @@ document
 
 document
     .querySelector('.edit-post')
-    .addEventListener('submit', commentFormHandler);
+    .addEventListener('submit', editFormHandler);
 

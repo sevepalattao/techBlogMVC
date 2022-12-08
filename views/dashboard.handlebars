@@ -1,13 +1,12 @@
 <div>
 <h2>Dashboard</h2>
 </div>
-<div>
     {{#each posts as |post|}}
+<div>
     {{> post_info post}}
-    <a href="/dashboard/edit/{{post.id}}"><button>Edit Post</button></a>
+    <a class="no-button" href="/dashboard/edit/{{post.id}}"><button>Edit Post</button></a>
 </div>
 {{/each}}
 <div>
-    <a href="/dashboard/create/"><button>Create Post</button></a>
+    <a class="no-button" href="/dashboard/create/"><button>Create Post</button></a>
 </div>
-<script src="/js/post.js"></script>
