@@ -2,7 +2,7 @@
 
 ## Description
 
-For this week it was my job to build a CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts as well. This site was built completely from scratch and deployed to Heroku. The site uses express-handlebars, mysql2, sequelize, dotenv, bcrypt, express-session, and connect-session-sequelize packages.
+This application is a CMS-style blog site similar to a Wordpress site, where developers can publish their blog posts and comment on other developers’ posts as well. This site was built completely from scratch and deployed to Heroku. The site uses express-handlebars, mysql2, sequelize, dotenv, bcrypt, express-session, and connect-session-sequelize packages.
 
 ## Link 
 
